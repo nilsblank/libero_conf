@@ -1,0 +1,99 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Place the right mug on the left plate)
+    (:regions
+      (akita_black_bowl_init_region_1
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.225 0.025 -0.17500000000000002)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (akita_black_bowl_init_region_2
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.025 0.025 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (akita_black_bowl_init_region_3
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 0.17500000000000002 0.025 0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (plate_init_region_1
+          (:target kitchen_table)
+          (:ranges (
+              (0.17500000000000002 -0.225 0.225 -0.17500000000000002)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (plate_init_region_2
+          (:target kitchen_table)
+          (:ranges (
+              (0.17500000000000002 -0.025 0.225 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (plate_init_region_3
+          (:target kitchen_table)
+          (:ranges (
+              (0.17500000000000002 0.17500000000000002 0.225 0.225)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+  )
+
+  (:objects
+    white_yellow_mug_1 white_yellow_mug_2 white_yellow_mug_3 - white_yellow_mug
+    plate_1 plate_2 plate_3 - plate
+  )
+
+  (:obj_of_interest
+    white_yellow_mug_3
+  )
+
+  (:init
+    (On white_yellow_mug_1 kitchen_table_akita_black_bowl_init_region_1)
+    (On white_yellow_mug_2 kitchen_table_akita_black_bowl_init_region_2)
+    (On white_yellow_mug_3 kitchen_table_akita_black_bowl_init_region_3)
+    (On plate_1 kitchen_table_plate_init_region_1)
+    (On plate_2 kitchen_table_plate_init_region_2)
+    (On plate_3 kitchen_table_plate_init_region_3)
+  )
+
+  (:goal
+    (And (On white_yellow_mug_3 plate_1))
+  )
+
+)

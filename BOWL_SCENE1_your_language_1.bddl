@@ -1,0 +1,111 @@
+(define (problem LIBERO_Kitchen_Tabletop_Manipulation)
+  (:domain robosuite)
+  (:language Your Language 1)
+    (:regions
+      (wooden_cabinet_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.01 -0.31 0.01 -0.29)
+            )
+          )
+          (:yaw_rotation (
+              (3.141592653589793 3.141592653589793)
+            )
+          )
+      )
+      (akita_black_bowl_1_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.325 0.025 -0.27499999999999997)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (akita_black_bowl_2_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.175 0.025 -0.125)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (akita_black_bowl_3_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 -0.025 0.025 0.025)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (akita_black_bowl_4_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 0.125 0.025 0.175)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (plate_init_region
+          (:target kitchen_table)
+          (:ranges (
+              (-0.025 0.225 0.025 0.275)
+            )
+          )
+          (:yaw_rotation (
+              (0.0 0.0)
+            )
+          )
+      )
+      (top_side
+          (:target wooden_cabinet_1)
+      )
+      (top_region
+          (:target wooden_cabinet_1)
+      )
+      (middle_region
+          (:target wooden_cabinet_1)
+      )
+      (bottom_region
+          (:target wooden_cabinet_1)
+      )
+    )
+
+  (:fixtures
+    kitchen_table - kitchen_table
+    wooden_cabinet_1 - wooden_cabinet
+  )
+
+  (:objects
+    akita_black_bowl_1 akita_black_bowl_2 akita_black_bowl_3 akita_black_bowl_4 - akita_black_bowl
+  )
+
+  (:obj_of_interest
+    akita_black_bowl_1
+    wooden_cabinet_1
+  )
+
+  (:init
+    (On akita_black_bowl_1 akita_black_bowl_1_init_region)
+    (On akita_black_bowl_2 akita_black_bowl_2_init_region)
+    (On akita_black_bowl_3 akita_black_bowl_3_init_region)
+    (On akita_black_bowl_4 akita_black_bowl_4_init_region)
+    (On wooden_cabinet_1 kitchen_table_wooden_cabinet_init_region)
+  )
+
+  (:goal
+    (And)
+  )
+
+)
